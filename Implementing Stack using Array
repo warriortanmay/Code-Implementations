@@ -1,0 +1,63 @@
+//implementing stack using array.
+class Stack{
+    int n=4;
+    int[] arr=new int[n];
+    int top=-1;
+    void push(int a){
+        if(top==n-1) System.out.println("OverFlow");
+        else{
+            top++;
+            arr[top]=a;
+        }
+    }
+    void pop(){
+        if(top==-1) System.out.println("UnderFlow");
+        else{
+            int res=arr[top--];
+            System.out.println(res);
+        }
+    }
+    void peek(){
+        if(top==-1) System.out.println("UnderFlow");
+        else{
+            int res=arr[top];
+            System.out.println(res);
+        }
+    }
+    int size(){
+        return top+1;
+    }
+    void display(){
+        System.out.println("these are all elements in stack");
+        while(top<0){
+            System.out.println(arr[top]);
+            top--;
+        }
+        System.out.println("till here");
+    }
+    public boolean isEmpty(){
+        if(top==-1) return true;
+        else return false;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Stack st=new Stack();
+		st.pop();
+		st.push(5);
+		st.push(3);
+		st.push(7);
+		st.push(9);
+		st.display();
+		st.pop();
+		st.peek();
+// 		System.out.println(st.pop());
+// 		System.out.println(st.peek());
+		System.out.println(st.size());
+		System.out.println(st.isEmpty());
+// 		System.out.println(st.pop());
+        st.pop();
+	}
+}
