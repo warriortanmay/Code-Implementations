@@ -1,0 +1,38 @@
+//Implementing Stack using Queue.
+import java.util.*;
+class Stack{
+    Queue<Integer> q=new LinkedList<>();
+    void push(int a){
+        q.add(a);
+        for(int i=0;i<q.size()-1;i++){
+            q.add(q.remove());
+        }
+    }
+    int pop(){
+        if(q.size()>0) return q.remove();
+        else return -1;
+    }
+    int top(){
+        return q.peek();
+    }
+    int size(){
+        return q.size();
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Stack st=new Stack();
+		System.out.println(st.pop());
+		st.push(10);
+		st.push(20);
+		st.push(30);
+		st.push(40);
+		st.push(50);
+		st.push(60);
+		System.out.println(st.pop());
+		System.out.println(st.size());
+		System.out.println(st.top());
+	}
+}
